@@ -1,9 +1,7 @@
 class Singleton {
   private static refCount: number = 0;
 
-  private constructor() {
-    // private 생성자
-  }
+  private constructor() {}
 
   public someMethod(): void {
     console.log('Singleton method called');

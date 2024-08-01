@@ -30,6 +30,9 @@ class BorderDecorator extends NodeDecorator {
   override draw(ctx: CanvasRenderingContext2D, offset: Offset): void {
     this.child.draw(ctx, offset);
     
+    /**
+     * 테두리 그리기
+     */
     const x = offset.x + this.x
     const y = offset.y + this.y
 
@@ -56,6 +59,9 @@ class ShadowDecorator extends NodeDecorator {
 
   override draw(ctx: CanvasRenderingContext2D, offset: Offset): void {
     ctx.save();
+    /**
+     * 그림자 정보 넣기
+     */
     ctx.shadowColor = this.shadowColor;
     ctx.shadowBlur = this.shadowBlur;
     ctx.shadowOffsetX = this.shadowOffsetX;
@@ -68,7 +74,8 @@ class ShadowDecorator extends NodeDecorator {
 // 사용 예시
 const baseRect = new Rect({ x: 10, y: 10, width: 100, height: 50, color: 'red' });
 
-const borderedRect = new BorderDecorator({ child: baseRect, borderColor: 'black', borderWidth: 2 });
+const borderedRect = new BorderDecorator
+({ child: baseRect, borderColor: 'black', borderWidth: 2 });
 
 const shadowedRect = new ShadowDecorator({
   shadowColor: 'rgba(0, 0, 0, 0.5)',

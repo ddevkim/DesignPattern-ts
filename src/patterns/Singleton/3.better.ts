@@ -2,6 +2,7 @@
  * ref와 unref 없이 가비지 컬렉션이 가능한 예시
  */
 class Singleton {
+  static instance: Singleton | null = null;
   private static get instanceWeakRef(): WeakRef<Singleton> | null {
     return this.getGlobalObject().singletonInstanceWeakRef || null;
   }

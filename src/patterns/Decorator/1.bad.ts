@@ -16,11 +16,14 @@ class BorderedRect extends Rect {
     /**
      * 테두리 그리기
      */
-    const x = this.x + offset.x;
-    const y = this.y + offset.y;
-    ctx.strokeStyle = this.borderColor;
-    ctx.lineWidth = this.borderWidth;
-    ctx.strokeRect(x, y, this.width, this.height);
+
+    // Utils.drawBorder(ctx, offset)
+
+    // const x = this.x + offset.x;
+    // const y = this.y + offset.y;
+    // ctx.strokeStyle = this.borderColor;
+    // ctx.lineWidth = this.borderWidth;
+    // ctx.strokeRect(x, y, this.width, this.height);
   }
 }
 
@@ -123,6 +126,7 @@ const borderedShadowedRect = new BorderedShadowedRect({
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 if (ctx) {
+
   borderedRect.draw(ctx, { x: 0, y: 0 });
   shadowedRect.draw(ctx, { x: 0, y: 0 });
   borderedShadowedRect.draw(ctx, { x: 0, y: 0 });
